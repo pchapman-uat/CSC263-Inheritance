@@ -11,6 +11,10 @@ public class Main {
         cephlapod.printInfo();
         cephlapod.swim(20);
 
+
+        // Create Humbolt Squid
+        Squid humbolt = new Squid("Humboldt", 40);
+        humbolt.printInfo();
     }
 }
 class Animal {
@@ -34,5 +38,19 @@ class Cephlapod extends Animal{
     }
     public void swim(float distance){
         System.out.println("I am swiming for "+distance+" meters");
+    }
+}
+
+class Squid extends Cephlapod{
+    public String subSpecies;
+    public Squid(String subSpecies, int age){
+        super("Squid", age);
+        this.subSpecies = subSpecies;
+    }
+
+    @Override
+    public void printInfo(){
+        System.out.println("My Species is: "+this.subSpecies+" "+this.species);
+        System.out.println("My Age is: "+this.age);
     }
 }

@@ -15,6 +15,10 @@ public class Main {
         // Create Humbolt Squid
         Squid humbolt = new Squid("Humboldt", 40);
         humbolt.printInfo();
+
+        // Create Dumbo Octopus
+        Octopus dumbo = new Octopus("Dumbo", 10);
+        dumbo.printInfo();
     }
 }
 class Animal {
@@ -55,5 +59,11 @@ class Cephlapod extends Animal{
 class Squid extends Cephlapod{
     public Squid(String subSpecies, int age){
         super("Squid", subSpecies, age);
+    }
+}
+// TODO: Add methods for Octopus class
+class Octopus extends Cephlapod{
+    public Octopus(String subSpecies, int age){
+        super("Octopus", subSpecies, age);
     }
 }

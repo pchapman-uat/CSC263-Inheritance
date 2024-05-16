@@ -1,11 +1,11 @@
 public class Main {
     public static void main(String[] args){
-        // Create general Animal
+        // General Animal
         Animal animal = new Animal("Cat", 30);
         animal.printInfo();
 
         // Create Cephlapod
-        Cephlapod cephlapod = new Cephlapod("Squid", null, 10);
+        Cephlapod cephlapod = new Cephlapod("Squid", 10);
         cephlapod.printInfo();
         cephlapod.swim(20);
 
@@ -50,6 +50,10 @@ class Cephlapod extends Animal{
         super(species, age);
         // Set the additonal class variables
         this.subSpecies = subSpecies;
+    }
+    // Secondary constructor for without sub species
+    public Cephlapod(String species, int age){
+        super(species, age);
     }
     // Swim method
     public void swim(float distance){

@@ -15,6 +15,8 @@ public class Main {
         // Create Humbolt Squid
         Squid humbolt = new Squid("Humboldt", 40);
         humbolt.printInfo();
+        humbolt.joinSchool();
+        humbolt.swim(10);
 
         // Create Dumbo Octopus
         Octopus dumbo = new Octopus("Dumbo", 10);
@@ -57,8 +59,40 @@ class Cephlapod extends Animal{
 }
 // TODO: Add methods for squid class
 class Squid extends Cephlapod{
+    public boolean withSchool = false;
     public Squid(String subSpecies, int age){
         super("Squid", subSpecies, age);
+    }
+    public void joinSchool(){
+        if(!this.withSchool){
+            this.withSchool = true;
+            System.out.println(subSpecies+" "+species+" joined a school of other squids");
+        } else {
+            System.out.println("Is already in a school of squids");
+        }
+    }
+    public void leaveSchool(){
+        if(this.withSchool){
+            this.withSchool = false;
+            System.out.println(subSpecies+""+species+" left a school of other squids");
+        } else {
+            System.out.println("Is not in a school of squids");
+        }
+    }
+    @Override
+    public void printInfo(){
+        super.printInfo();
+        if(withSchool){
+            System.out.println("I am in a school of other squids");
+        } 
+    }
+    @Override
+    public void swim(float distance){
+        if(withSchool){
+            System.out.println("I am swimming for "+distance+" meters and I am in a school of other squids");
+        } else {
+            super.swim(distance);
+        }
     }
 }
 // TODO: Add methods for Octopus class
